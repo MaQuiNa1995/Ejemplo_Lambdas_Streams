@@ -13,23 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.cic.christian.ejemploslambdas;
-
-import java.util.logging.Logger;
+package es.maquina.stream;
 
 /**
  * @Autor cmunoz
  * @Fecha 22-jun-2017
  */
-public class Main {
-
-    private static final Logger LOG = Logger.getLogger(Main.class.getName());
+public class MainStreams {
 
     public static void main(String args[]) {
-        StreamFactory ejemploStreams = new StreamFactory();
+	StreamFactory ejemploStreams = new StreamFactory();
 
-//        ejemploStreams.streamsNumeros();
-        ejemploStreams.streamsPalabras();
+	ejemploStreams.streamsPalabras();
     }
 
 }
