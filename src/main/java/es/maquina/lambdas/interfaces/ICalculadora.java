@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.maquina.lambdas;
+package es.maquina.lambdas.interfaces;
 
 /**
- *
- * @author cmunoz
+ * Interfaz funcional usada para hacer operaciones con dos numeros de tipo java
  */
 @FunctionalInterface
-public interface Sumador {
-    public void sumar(int primero, int segundo);
+public interface ICalculadora {
+    public void operar(int primero, int segundo);
 }
