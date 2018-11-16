@@ -1,4 +1,4 @@
-# JavaStreamExamples
+# Lambdas-StreamsExample
 
 En este proyecto hago ejemplos sobre Streams y Lambdas para aprender lo básico de ellos
 Siéntete libre de mandarme cualquier duda que puedas tener
