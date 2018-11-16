@@ -39,6 +39,7 @@ public class MainLambdas {
      * 
      */
     private static void ejecutarEjemploCadenas() {
+
 	IValidadorCadena validadorCadenas = (nombre, patron) -> nombre.matches(patron);
 
 	String palabraValidar = "MaQuiNa";
@@ -57,7 +58,7 @@ public class MainLambdas {
      * @see es.maquina.lambdas.interfaces.IValidadorCadena
      */
     private static void ejecutarEjemploCalculadora() {
-	// Creamos un objeto de la interfaz
+	// Creamos los objetos de la interfaz y rellenamos los metodos
 	ICalculadora sumadorNumeros = (primero, segundo) -> LOGGER
 		.info("La suma es: " + String.valueOf(primero + segundo));
 	ICalculadora restarNumeros = (primero, segundo) -> LOGGER
@@ -67,8 +68,15 @@ public class MainLambdas {
 	ICalculadora dividirNumeros = (primero, segundo) -> LOGGER
 		.info("La division es: " + String.valueOf(primero / segundo));
 
+	// usamos variables de numeros predefinidas para mayor comodidad
 	int numero1 = 10;
 	int numero2 = 5;
+
+	/**
+	 * Llamamos a los objetos definidos arriba para invocar a la implementacion
+	 * propia de cada uno
+	 * 
+	 */
 	sumadorNumeros.operar(numero1, numero2);
 	restarNumeros.operar(numero1, numero2);
 	multiplicarNumeros.operar(numero1, numero2);
