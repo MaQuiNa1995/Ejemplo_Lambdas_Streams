@@ -1,5 +1,7 @@
 package es.maquina.lambdas.interfaces;
 
+import java.util.logging.Logger;
+
 /**
  * Main usado para la visualizacion de ejemplos sobre lambdas
  * 
@@ -7,6 +9,11 @@ package es.maquina.lambdas.interfaces;
  *
  */
 public class MainLambdas {
+
+    /**
+     * Log generico de java
+     */
+    private static final Logger LOGGER = Logger.getLogger(MainLambdas.class.getName());
 
     /**
      * Metodo usado para la ejecucion del programa puedes comentar los metodos para
@@ -36,7 +43,7 @@ public class MainLambdas {
 
 	String palabraValidar = "MaQuiNa";
 	String patronValidar = "[A-Z][a-zA-Z]*";
-	System.out.println("\nLa cadena: " + palabraValidar + " cumple el patron " + patronValidar + ": "
+	LOGGER.info("La cadena: " + palabraValidar + " cumple el patron " + patronValidar + ": "
 		+ validadorCadenas.validar(palabraValidar, patronValidar));
     }
 
@@ -51,14 +58,14 @@ public class MainLambdas {
      */
     private static void ejecutarEjemploCalculadora() {
 	// Creamos un objeto de la interfaz
-	ICalculadora sumadorNumeros = (primero, segundo) -> System.out
-		.println("La suma es: " + String.valueOf(primero + segundo));
-	ICalculadora restarNumeros = (primero, segundo) -> System.out
-		.println("La resta es: " + String.valueOf(primero - segundo));
-	ICalculadora multiplicarNumeros = (primero, segundo) -> System.out
-		.println("La multiplicacion es: " + String.valueOf(primero * segundo));
-	ICalculadora dividirNumeros = (primero, segundo) -> System.out
-		.println("La division es: " + String.valueOf(primero / segundo));
+	ICalculadora sumadorNumeros = (primero, segundo) -> LOGGER
+		.info("La suma es: " + String.valueOf(primero + segundo));
+	ICalculadora restarNumeros = (primero, segundo) -> LOGGER
+		.info("La resta es: " + String.valueOf(primero - segundo));
+	ICalculadora multiplicarNumeros = (primero, segundo) -> LOGGER
+		.info("La multiplicacion es: " + String.valueOf(primero * segundo));
+	ICalculadora dividirNumeros = (primero, segundo) -> LOGGER
+		.info("La division es: " + String.valueOf(primero / segundo));
 
 	int numero1 = 10;
 	int numero2 = 5;
