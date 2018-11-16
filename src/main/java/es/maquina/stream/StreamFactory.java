@@ -33,16 +33,14 @@ public class StreamFactory {
      */
     public void streamsNumeros() {
 
-        LOG.info("Generamos 10 Números");
-        generarDiezNumeros()
-                .stream() // Indicamos que es un Stream
-                .forEach(System.out::println);
+	LOG.info("Generamos 10 Números");
+	generarDiezNumeros().stream() // Indicamos que es un Stream
+		.forEach(System.out::println);
 
-        LOG.info("Generamos 10 Números y Los Límitamos a 5");
-        generarDiezNumeros()
-                .stream() // Indicamos que es un Stream
-                .limit(5) // cogemos solo los 5 primeros
-                .forEach(System.out::println); // Imprimimos en pantalla cada elemento   
+	LOG.info("Generamos 10 Números y Los Límitamos a 5");
+	generarDiezNumeros().stream() // Indicamos que es un Stream
+		.limit(5) // cogemos solo los 5 primeros
+		.forEach(System.out::println); // Imprimimos en pantalla cada elemento
     }
 
     /**
@@ -51,35 +49,33 @@ public class StreamFactory {
      * @return Lista de 10 números
      */
     private List<Integer> generarDiezNumeros() {
-        List<Integer> numerosRandom = new ArrayList<>();
+	List<Integer> numerosRandom = new ArrayList<>();
 
-        for (int i = 1; i < 11; i++) {
-            numerosRandom.add(i);
-        }
+	for (int i = 1; i < 11; i++) {
+	    numerosRandom.add(i);
+	}
 
-        return numerosRandom;
+	return numerosRandom;
     }
 
     /**
      * Método para uso de Streams con Strings
      *
-     * @see el contains es sensible a mayúsculas y minúsculas
+     * @see java.lang.String#contains(CharSequence) es sensible a mayusculas
      */
     public void streamsPalabras() {
-        LOG.info("Generamos Palabras e Imprimimos Las Que Tengan 'i'");
-        generarPalabras()
-                .stream() // Indicamos que es un Stream
-                .filter(s -> s.contains("i")) // 'Filtramos' cada palabra 
-                .forEach(System.out::println); // Imprimimos en pantalla
+	LOG.info("Generamos Palabras e Imprimimos Las Que Tengan 'i'");
+	generarPalabras().stream() // Indicamos que es un Stream
+		.filter(s -> s.contains("i")) // 'Filtramos' cada palabra
+		.forEach(System.out::println); // Imprimimos en pantalla
 
-        LOG.info("Generamos Palabras Las Metemos a Un Mapa y Las Ordenamos");
-        generarPalabras()
-                .stream() // Indicamos que es un Stream
-                .map(String::toUpperCase) // Pasamos el Stream a mapa y mayúsculas
-                .sorted() // Le ordenamos 'Naturalmente'
-                          //String -> Abecedario
-                          //Numeros -> Mayor a Menor
-                .forEach(System.out::println); // Imprimimos en pantalla cada elemento  
+	LOG.info("Generamos Palabras Las Metemos a Un Mapa y Las Ordenamos");
+	generarPalabras().stream() // Indicamos que es un Stream
+		.map(String::toUpperCase) // Pasamos el Stream a mapa y mayúsculas
+		.sorted() // Le ordenamos 'Naturalmente'
+			  // String -> Abecedario
+			  // Numeros -> Mayor a Menor
+		.forEach(System.out::println); // Imprimimos en pantalla cada elemento
 
     }
 
@@ -89,12 +85,10 @@ public class StreamFactory {
      * @return Lista de ocho palabras
      */
     private List<String> generarPalabras() {
-        List<String> nombresInvocaciones
-                = Arrays.asList("Valefor", "Ifrit", "Ixion", "Shiva",
-                        "Bahamut", "Yogimbo", "Anima", "Hermanas Magus"
-                );
+	List<String> nombresInvocaciones = Arrays.asList("Valefor", "Ifrit", "Ixion", "Shiva", "Bahamut", "Yogimbo",
+		"Anima", "Hermanas Magus");
 
-        return nombresInvocaciones;
+	return nombresInvocaciones;
     }
 
 }

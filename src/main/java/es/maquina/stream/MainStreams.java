@@ -16,8 +16,8 @@
 package es.maquina.stream;
 
 /**
- * @Autor cmunoz
- * @Fecha 22-jun-2017
+ * @autor cmunoz
+ * @date 22-jun-2017
  */
 public class MainStreams {
 

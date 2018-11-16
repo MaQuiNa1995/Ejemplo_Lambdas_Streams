@@ -42,7 +42,7 @@ public class MainLambdas {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.lambdas.interfaces.IValidadorCadena
+     * @see es.maquina.lambdas.interfaces.MainLambdas.IValidadorCadena#validar
      * 
      */
     private static void ejecutarEjemploCadenas() {
@@ -62,7 +62,7 @@ public class MainLambdas {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.lambdas.interfaces.IValidadorCadena
+     * @see es.maquina.lambdas.interfaces.MainLambdas.IValidadorCadena#validar
      */
     private static void ejecutarEjemploCalculadora() {
 	// Creamos los objetos de la interfaz y rellenamos los metodos
