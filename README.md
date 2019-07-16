@@ -18,3 +18,7 @@ Proyecto usado para repasar las funcionalidades novedosas que ofrece java8
 
 ## Clase Optional
 <a href="https://www.baeldung.com/java-optional">Documentación Optional</a>
+
+## Stream 
+<a href="https://www.tutorialspoint.com/java8/java8_streams">Stream</a>
+
