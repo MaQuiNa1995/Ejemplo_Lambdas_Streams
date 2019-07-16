@@ -1,4 +1,4 @@
-package es.maquina.lambdas.interfaces;
+package es.maquina.java8.interfaces.funcionales;
 
 import java.util.logging.Logger;
 
@@ -8,28 +8,22 @@ import java.util.logging.Logger;
  * @author MaQui1995
  *
  */
-public class MainLambdas {
+public class MainInterfacesFuncionales {
 
     /**
      * Log generico de java
      */
-    private static final Logger LOGGER = Logger.getLogger(MainLambdas.class.getName());
-
-    /**
-     * Constante de tipo int que indica el tiempo de espera del hilo
-     */
-    private static final int TIEMPO_ESPERA_HILO = 2000;
+    private static final Logger LOGGER = Logger.getLogger(MainInterfacesFuncionales.class.getName());
 
     /**
      * Metodo usado para la ejecucion del programa puedes comentar los metodos para
      * ejecutar los que te interesen
      * 
-     * @param args
-     *            las distintas @see java.lang.String que pueden pasarse al programa
+     * @param args las distintas @see java.lang.String que pueden pasarse al
+     *             programa
      */
     public static void main(String[] args) {
 
-	ejecutarEjemploHiloLambda();
 	ejecutarEjemploCalculadora();
 	ejecutarEjemploCadenas();
 
@@ -42,7 +36,7 @@ public class MainLambdas {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.lambdas.interfaces.MainLambdas.IValidadorCadena#validar
+     * @see es.maquina.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
      * 
      */
     private static void ejecutarEjemploCadenas() {
@@ -52,7 +46,7 @@ public class MainLambdas {
 	String palabraValidar = "MaQuiNa";
 	String patronValidar = "[A-Z][a-zA-Z]*";
 	LOGGER.info("La cadena: " + palabraValidar + " cumple el patron " + patronValidar + ": "
-		+ validadorCadenas.validar(palabraValidar, patronValidar));
+		+ validadorCadenas.validarCadenaByPatron(palabraValidar, patronValidar));
     }
 
     /**
@@ -62,7 +56,7 @@ public class MainLambdas {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.lambdas.interfaces.MainLambdas.IValidadorCadena#validar
+     * @see es.maquina.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
      */
     private static void ejecutarEjemploCalculadora() {
 	// Creamos los objetos de la interfaz y rellenamos los metodos
@@ -91,52 +85,19 @@ public class MainLambdas {
     }
 
     /**
-     * Ejecuta un hilo creado a partir de un lambda que solo imprime trazas de log
-     * indicando los pasos que hace se pone el primero en el main para que mientras
-     * esta ejecutando este se hagan las otras operaciones del main por lo tanto
-     * este metodo dejara traza en el principio y el final del metodo ya que la
-     * ejecucion de los demas metodos que contiene el main no excede el tiempo de
-     * espera usado en este caso @see es.maquina.lambdas.interfaces.MainLambda#main
-     */
-    private static void ejecutarEjemploHiloLambda() {
-
-	/**
-	 * Creacion de un objeto Runnable (Generico de los hilos) en el que definimos la
-	 * funcionalidad Impresion de trazas al iniciar el hilo y al acabar una espera
-	 * de @see es.maquina.lambdas.interfaces.MainLambdas#TIEMPO_ESPERA_HILO
-	 */
-	Runnable hilo = (() -> {
-	    try {
-
-		LOGGER.info("Se empieza la ejecucion del hilo: " + Thread.currentThread().getName());
-		Thread.sleep(TIEMPO_ESPERA_HILO);
-		LOGGER.info(Thread.currentThread().getName() + " se desperto despues de " + TIEMPO_ESPERA_HILO / 1000
-			+ " Segundos de hibernacion");
-	    } catch (InterruptedException exception) {
-		LOGGER.warning(exception.getMessage());
-	    }
-	});
-
-	new Thread(hilo, "Hilo Dormilon de 2 Seg").start();
-
-    }
-
-    /**
      * Interfaz funcional usada para validar cadenas
      */
     @FunctionalInterface
-    private interface IValidadorCadena {
+    public interface IValidadorCadena {
 	/**
 	 * Unico metodo de la interfaz en el que se reciben dos @see java.lang.String
 	 * 
-	 * @param cadena
-	 *            String a validar
-	 * @param patron
-	 *            String a usar como patron
+	 * @param cadena String a validar
+	 * @param patron String a usar como patron
 	 * @return booleano que ofrece informacion sobre si el parametro "cadena" cumple
 	 *         el "patron" pasados al metodo
 	 */
-	public boolean validar(String cadena, String patron);
+	public boolean validarCadenaByPatron(String cadena, String patron);
     }
 
 }

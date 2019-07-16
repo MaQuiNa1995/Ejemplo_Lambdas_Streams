@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.maquina.lambdas.interfaces;
+package es.maquina.java8.interfaces.funcionales;
 
 /**
  * Interfaz funcional usada para hacer operaciones con dos numeros de tipo java
