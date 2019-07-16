@@ -3,8 +3,11 @@ Proyecto usado para repasar las funcionalidades novedosas que ofrece java8
 
 ## Lambdas
 <a href="https://www.geeksforgeeks.org/lambda-expressions-java-8/">Sintaxis Lambdas</a>
+<p>
 <a href="https://www.tutorialspoint.com/java8/java8_lambda_expressions">Ejemplos Lambda</a>
+<p>
 <a href="https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html">Introducción a los Lambdas</a>
+<p>
 <a href="https://www.baeldung.com/java-8-lambda-expressions-tips">Buenas Prácticas Lambdas</a>
 
 ## Interfaces Funcionales
