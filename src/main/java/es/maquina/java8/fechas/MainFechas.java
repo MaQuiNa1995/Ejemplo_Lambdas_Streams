@@ -1,6 +1,9 @@
 package es.maquina.java8.fechas;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.logging.Logger;
@@ -11,7 +14,8 @@ public class MainFechas {
 
     public static void main(String[] args) {
 	ejemplosLocalDate();
-
+	ejemplosLocalTime();
+	ejemplosLocalDateTime();
     }
 
     /**
@@ -63,7 +67,42 @@ public class MainFechas {
 
 	// Coger el primer día del mes
 	LocalDate primerDiaMes = LocalDate.parse("2016-06-12").with(TemporalAdjusters.firstDayOfMonth());
+	LOGGER.info("Primer día del mes actual es: " + primerDiaMes);
+	crearSaltoLinea();
+    }
 
+    /**
+     * Método para ver ejemplos de uso de {@link java.time.LocalTime}
+     * <P>
+     * Se usa para representar la hora
+     * 
+     */
+    private static void ejemplosLocalTime() {
+
+	// Instanciamos el objeto LocalDate y con .now() cogemos la fecha actual
+	LocalTime hoy = LocalTime.now();
+
+	LOGGER.info("La hora actual: " + hoy);
+	crearSaltoLinea();
+
+    }
+
+    /**
+     * Método para ver ejemplos de uso de {@link java.time.LocalDateTime}
+     * <P>
+     * Se usa para representar la hora y la fecha y la zona horaria
+     * <p>
+     */
+    private static void ejemplosLocalDateTime() {
+
+	// Instanciamos el objeto LocalDate y con .now() cogemos la fecha actual
+	LocalDateTime hoy = LocalDateTime.now();
+
+	for (String zonaHoraria : ZoneId.getAvailableZoneIds()) {
+	    LOGGER.info("La fecha y hora actuales en " + zonaHoraria + " " + hoy.atZone(ZoneId.of(zonaHoraria)));
+	}
+
+	crearSaltoLinea();
     }
 
     private static void crearSaltoLinea() {
