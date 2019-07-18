@@ -21,3 +21,6 @@ Proyecto usado para repasar las funcionalidades novedosas que ofrece java8
 
 ## Stream 
 <a href="https://www.tutorialspoint.com/java8/java8_streams">Documentación Streams</a>
+
+## Fechas En Java 8 Adios al java.util.Date
+<a href="https://www.baeldung.com/java-8-date-time-intro">Documentacion LocalDate, LocalTime y LocalDateTime</a>
