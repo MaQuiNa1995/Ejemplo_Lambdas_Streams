@@ -3,11 +3,20 @@ package es.maquina.java8.fechas;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.logging.Logger;
 
+/**
+ * Clase usada para ver un ejemplo de uso de las nuevas fechas que introduce
+ * java8
+ * <p>
+ * <b>IMPORTANTE:</b> recordar que todas las clases de los paquetes que cuelgan
+ * de <u>java.time</u> son INMUNTABLES
+ * 
+ * @author MaQuiNa1995
+ *
+ */
 public class MainFechas {
 
     private static final Logger LOGGER = Logger.getLogger(MainFechas.class.getName());
@@ -21,9 +30,13 @@ public class MainFechas {
     /**
      * Método para ver ejemplos de uso de {@link java.time.LocalDate}
      * <P>
-     * Se usa para representar una fecha en formato ISO (yyyy-MM-dd) sin la hora
+     * Se usa para representar una fecha en formato ISO (yyyy-MM-dd) sin la horas
      * <p>
      * Útil para almacenar cumpleaños por ejemplo
+     * 
+     * @see <a href=
+     *      "https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">Javadoc
+     *      LocalDate</a>
      * 
      */
     private static void ejemplosLocalDate() {
@@ -51,7 +64,7 @@ public class MainFechas {
 	crearSaltoLinea();
 
 	// Para sacar el día el mes o el año de un objeto LocalDate:
-	LOGGER.info("Hoy es día:" + hoy.getDayOfMonth() + " Estamos en el mes numero" + hoy.getMonthValue()
+	LOGGER.info("Hoy es día: " + hoy.getDayOfMonth() + " Estamos en el mes numero " + hoy.getMonthValue()
 		+ " de nombre: " + hoy.getMonth() + " En el año: " + hoy.getYear());
 	crearSaltoLinea();
 
@@ -74,15 +87,24 @@ public class MainFechas {
     /**
      * Método para ver ejemplos de uso de {@link java.time.LocalTime}
      * <P>
-     * Se usa para representar la hora
+     * Se usa para representar la hora sin fechas en formato <b>HH:MM:ss.SSS</b>
+     * 
+     * @see <a href=
+     *      "https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">Javadoc
+     *      LocalTime</a>
      * 
      */
     private static void ejemplosLocalTime() {
 
-	// Instanciamos el objeto LocalDate y con .now() cogemos la fecha actual
+	// Instanciamos el objeto LocalDate y con .now() cogemos la hora
 	LocalTime hoy = LocalTime.now();
 
 	LOGGER.info("La hora actual: " + hoy);
+	crearSaltoLinea();
+
+	LOGGER.info("Dentro de una hora serán las: " + hoy.plusHours(1L) + " y hace una hora eran las: "
+		+ hoy.minusHours(1L));
+
 	crearSaltoLinea();
 
     }
@@ -91,16 +113,26 @@ public class MainFechas {
      * Método para ver ejemplos de uso de {@link java.time.LocalDateTime}
      * <P>
      * Se usa para representar la hora y la fecha y la zona horaria
-     * <p>
+     * 
+     * @see <a href=
+     *      "https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">Javadoc
+     *      LocalDateTime</a>
      */
     private static void ejemplosLocalDateTime() {
 
 	// Instanciamos el objeto LocalDate y con .now() cogemos la fecha actual
 	LocalDateTime hoy = LocalDateTime.now();
+	LOGGER.info("La fecha y hora actuales: " + hoy);
 
-	for (String zonaHoraria : ZoneId.getAvailableZoneIds()) {
-	    LOGGER.info("La fecha y hora actuales en " + zonaHoraria + " " + hoy.atZone(ZoneId.of(zonaHoraria)));
-	}
+	LocalTime localTimeAhora = LocalTime.now();
+	// Descomenta esta parte para ver todas las zonas horarias posibles y sus fechas
+	// actuales
+	// for (String zonaHoraria : ZoneId.getAvailableZoneIds()) {
+	// LOGGER.info("La fecha y hora actuales en " + zonaHoraria + " es: " +
+	// hoy.atZone(ZoneId.of(zonaHoraria)));
+	// }
+
+	// Es posible crear un LocalDateTime a traves de
 
 	crearSaltoLinea();
     }
