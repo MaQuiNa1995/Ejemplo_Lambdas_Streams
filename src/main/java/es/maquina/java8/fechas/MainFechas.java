@@ -124,7 +124,6 @@ public class MainFechas {
 	LocalDateTime hoy = LocalDateTime.now();
 	LOGGER.info("La fecha y hora actuales: " + hoy);
 
-	LocalTime localTimeAhora = LocalTime.now();
 	// Descomenta esta parte para ver todas las zonas horarias posibles y sus fechas
 	// actuales
 	// for (String zonaHoraria : ZoneId.getAvailableZoneIds()) {
