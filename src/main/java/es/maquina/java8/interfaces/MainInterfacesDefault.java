@@ -4,7 +4,7 @@ public class MainInterfacesDefault {
 
     public static void main(String... args) {
 
-	// Se hace un new del objeto para noe star con tonterías de statics
+	// Se hace un new del objeto para no estar con tonterías de statics
 	Ejemplo ejemplo = new Ejemplo();
 
 	// Metodo normal de una interfaz
