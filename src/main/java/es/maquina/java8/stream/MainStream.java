@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Clase enfocada a mostrar ejemplos de manejo de Streams
@@ -115,31 +116,30 @@ public class MainStream {
 	// ---------- Reduciendo listas para solo coger X atributo ----------
 
 	LOGGER.info("Reduciendo listas de objetos a solo 1 atributo");
-	List<String> listaNombreClase = generarClaseCombate()
+	generarClaseCombate()
 		// Indicamos que es un Stream
 		.stream()
 		// De cada elemento cogemos el NombreClase
 		.map(n -> n.getNombreClase())
 		// Lo pasamos a una lista
-		.collect(Collectors.toList());
+		.collect(Collectors.toList())
+		// Lo imprimimos en pantalla
+		.forEach(e -> System.out.println(e));
 
-	// Lo imprimimos en pantalla
-	listaNombreClase.forEach(e -> System.out.println(e));
 
 	crearSaltoLinea();
 
 	// ---------- Filtro de atributos de objeto por condicion ----------
 	LOGGER.info("Filtro por condición en numeros vidaBase mayor de 600");
-	List<ClaseCombate> listaVidaBaseAlta = generarClaseCombate()
+	generarClaseCombate()
 		// Indicamos que es un Stream
 		.stream()
 		// Cogemos los elementos que tengan mas de 600 de vidaBase
 		.filter(n -> n.getVidaBase() > 600)
 		// Lo pasamos a una lista
-		.collect(Collectors.toList());
-
-	// Lo imprimimos en pantalla
-	listaVidaBaseAlta.forEach(System.out::println);
+		.collect(Collectors.toList())
+		// Lo imprimimos en pantalla
+		.forEach(System.out::println);
 
 	crearSaltoLinea();
 
@@ -186,43 +186,37 @@ public class MainStream {
      * @return Lista de 10 números
      */
     private static List<Integer> generarDiezNumeros() {
-	List<Integer> numerosRandom = new ArrayList<>();
+	return IntStream.range(1, 10).boxed().collect(Collectors.toList());
 
-	for (int i = 0; i < 10; i++) {
-	    numerosRandom.add(i);
-	}
-
-	return numerosRandom;
     }
 
     private static List<ClaseCombate> generarClaseCombate() {
 
-	ClaseCombate objeto1 = new ClaseCombate();
-	objeto1.setNombreClase("Espadachin");
-	objeto1.setTipoArma("Espada");
-	objeto1.setVidaBase(1000);
-
-	ClaseCombate objeto2 = new ClaseCombate();
-	objeto2.setNombreClase("Mago");
-	objeto2.setTipoArma("Varita");
-	objeto2.setVidaBase(450);
-
-	ClaseCombate objeto3 = new ClaseCombate();
-	objeto3.setNombreClase("Arquero");
-	objeto3.setTipoArma("Arco");
-	objeto3.setVidaBase(550);
-
-	ClaseCombate objeto4 = new ClaseCombate();
-	objeto4.setNombreClase("Artista Marcial");
-	objeto4.setTipoArma("Puño De Combate");
-	objeto4.setVidaBase(700);
-
 	List<ClaseCombate> listaObjetoEjemplo = new ArrayList<>();
+	
+	ClaseCombate objeto = new ClaseCombate();
+	objeto.setNombreClase("Espadachin");
+	objeto.setTipoArma("Espada");
+	objeto.setVidaBase(1000);
+	listaObjetoEjemplo.add(objeto);
 
-	listaObjetoEjemplo.add(objeto1);
-	listaObjetoEjemplo.add(objeto2);
-	listaObjetoEjemplo.add(objeto3);
-	listaObjetoEjemplo.add(objeto4);
+	objeto = new ClaseCombate();
+	objeto.setNombreClase("Mago");
+	objeto.setTipoArma("Varita");
+	objeto.setVidaBase(450);
+	listaObjetoEjemplo.add(objeto);
+
+	objeto = new ClaseCombate();
+	objeto.setNombreClase("Arquero");
+	objeto.setTipoArma("Arco");
+	objeto.setVidaBase(550);
+	listaObjetoEjemplo.add(objeto);
+
+	objeto = new ClaseCombate();
+	objeto.setNombreClase("Artista Marcial");
+	objeto.setTipoArma("Puño De Combate");
+	objeto.setVidaBase(700);
+	listaObjetoEjemplo.add(objeto);
 
 	return listaObjetoEjemplo;
     }
