@@ -17,6 +17,7 @@ package es.maquina.java8.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -47,7 +48,8 @@ public class MainStream {
 
     /**
      * Método para uso de Streams con Strings
-     *
+     * 
+     * @see{@link java.util.Collections#frequency}
      * @see java.lang.String#contains(CharSequence) es sensible a mayusculas
      */
     private static void streamPalabrasEjemplo() {
@@ -78,6 +80,11 @@ public class MainStream {
 		.sorted()
 		// Imprimimos en pantalla de cada elemento
 		.forEach(System.out::println);
+
+	LOGGER.info("Ejemplo de uso de frequency para contar coincidencias en una lista");
+	// Podemos usar el metodo {@link Collections#frequency} para contar las
+	// coincidencias de X objeto en este caso una String
+	System.out.println(Collections.frequency(generarPalabras(), "Yogimbo"));
 
     }
 
