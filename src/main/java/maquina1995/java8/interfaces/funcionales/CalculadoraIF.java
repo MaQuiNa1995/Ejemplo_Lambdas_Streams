@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.maquina.java8.interfaces.funcionales;
+package maquina1995.java8.interfaces.funcionales;
 
 /**
  * Interfaz funcional usada para hacer operaciones con dos numeros de tipo java
  */
 @FunctionalInterface
-public interface ICalculadora {
+public interface CalculadoraIF {
     public void operar(int primero, int segundo);
 }

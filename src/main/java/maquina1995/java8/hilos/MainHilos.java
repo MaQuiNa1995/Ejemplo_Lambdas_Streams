@@ -1,4 +1,4 @@
-package es.maquina.java8.hilos;
+package maquina1995.java8.hilos;
 
 import java.util.logging.Logger;
 

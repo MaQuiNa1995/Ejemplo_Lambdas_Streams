@@ -1,4 +1,4 @@
-package es.maquina.java8.interfaces.funcionales;
+package maquina1995.java8.interfaces.funcionales;
 
 import java.util.logging.Logger;
 
@@ -36,7 +36,7 @@ public class MainInterfacesFuncionales {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
+     * @see maquina1995.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
      * 
      */
     private static void ejecutarEjemploCadenas() {
@@ -56,17 +56,17 @@ public class MainInterfacesFuncionales {
      * 
      * PD: es statico para poder usarno en el main
      * 
-     * @see es.maquina.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
+     * @see maquina1995.java8.interfaces.funcionales.MainInterfacesFuncionales.IValidadorCadena#validar
      */
     private static void ejecutarEjemploCalculadora() {
 	// Creamos los objetos de la interfaz y rellenamos los metodos
-	ICalculadora sumadorNumeros = (primero, segundo) -> LOGGER
+	CalculadoraIF sumadorNumeros = (primero, segundo) -> LOGGER
 		.info("La suma es: " + String.valueOf(primero + segundo));
-	ICalculadora restarNumeros = (primero, segundo) -> LOGGER
+	CalculadoraIF restarNumeros = (primero, segundo) -> LOGGER
 		.info("La resta es: " + String.valueOf(primero - segundo));
-	ICalculadora multiplicarNumeros = (primero, segundo) -> LOGGER
+	CalculadoraIF multiplicarNumeros = (primero, segundo) -> LOGGER
 		.info("La multiplicacion es: " + String.valueOf(primero * segundo));
-	ICalculadora dividirNumeros = (primero, segundo) -> LOGGER
+	CalculadoraIF dividirNumeros = (primero, segundo) -> LOGGER
 		.info("La division es: " + String.valueOf(primero / segundo));
 
 	// usamos variables de numeros predefinidas para mayor comodidad

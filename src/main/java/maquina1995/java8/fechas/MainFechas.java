@@ -1,4 +1,4 @@
-package es.maquina.java8.fechas;
+package maquina1995.java8.fechas;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

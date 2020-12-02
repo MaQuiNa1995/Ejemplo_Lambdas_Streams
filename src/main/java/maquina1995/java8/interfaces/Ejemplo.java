@@ -1,4 +1,4 @@
-package es.maquina.java8.interfaces;
+package maquina1995.java8.interfaces;
 
 public class Ejemplo implements EjemploInterfaz {
 

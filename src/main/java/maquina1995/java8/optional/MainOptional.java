@@ -1,4 +1,4 @@
-package es.maquina.java8.optional;
+package maquina1995.java8.optional;
 
 import java.util.Optional;
 import java.util.logging.Logger;
